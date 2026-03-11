@@ -1,0 +1,15 @@
+name: PR Worlds
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+jobs:
+  world:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: Csar1310/action@v1
+        with:
+          database_url: ${{ secrets.DATABASE_URL }}

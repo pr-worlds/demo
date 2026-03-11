@@ -1,0 +1,16 @@
+{
+  "mode": "synthetic",
+  "rowCounts": {
+    "organizations": 5,
+    "users": 20,
+    "projects": 15,
+    "tasks": 40,
+    "comments": 30,
+    "files": 25
+  },
+  "distributions": {
+    "plan": { "free": 0.7, "pro": 0.2, "enterprise": 0.1 },
+    "role": { "owner": 0.1, "admin": 0.15, "member": 0.5, "viewer": 0.25 },
+    "status": { "active": 0.7, "archived": 0.2, "paused": 0.1 }
+  }
+}
