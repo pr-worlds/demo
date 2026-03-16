@@ -84,5 +84,6 @@ CREATE TABLE files (
   kind          text NOT NULL DEFAULT 'document'
                   CHECK (kind IN ('document', 'image', 'spreadsheet', 'archive', 'other')),
   size_bytes    integer NOT NULL CHECK (size_bytes >= 0),
-  created_at    timestamptz NOT NULL DEFAULT now()
+  created_at    timestamptz NOT NULL DEFAULT now(),
+  updated_at    timestamptz NOT NULL DEFAULT now()
 );
