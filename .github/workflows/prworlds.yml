@@ -10,6 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: Csar1310/action@v1
+      - uses: pr-worlds/action@v1
         with:
           database_url: ${{ secrets.DATABASE_URL }}
