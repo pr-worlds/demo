@@ -61,6 +61,7 @@ CREATE TABLE tasks (
   unit_price    numeric(10,2) CHECK (unit_price >= 0),
   total         numeric(10,2),
   due_date      date,
+  remind_at     timestamptz,
   created_at    timestamptz NOT NULL DEFAULT now(),
   updated_at    timestamptz NOT NULL DEFAULT now()
 );
