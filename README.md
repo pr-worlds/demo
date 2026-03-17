@@ -1,6 +1,6 @@
 # PR Worlds Demo
 
-This repo demonstrates [PR Worlds](https://github.com/Csar1310/action) — deterministic preview data for every Pull Request.
+This repo demonstrates [PR Worlds](https://github.com/pr-worlds/action) — deterministic preview data for every Pull Request.
 
 **Open a PR and a world of realistic data appears. Close it and the world disappears.**
 
@@ -12,12 +12,12 @@ No faker noise. No manual seeds. No copying production.
 
 Every PR gets a comment like this:
 
-> **PR World ready for #3**
+> **PR World ready for #4**
 >
 > | | |
 > |---|---|
-> | Schema | `pr_3` |
-> | Fingerprint | `f2d39f7ab0735d31` |
+> | Schema | `pr_4` |
+> | Fingerprint | `a3c17e9bd82f0145` |
 > | Rows | **135** across **6** tables |
 > | Integrity | 0 violations |
 >
@@ -63,12 +63,15 @@ on:
   pull_request:
     types: [opened, reopened, synchronize, closed]
 
+permissions:
+  pull-requests: write
+
 jobs:
   world:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: Csar1310/action@v1
+      - uses: pr-worlds/action@v1
         with:
           database_url: ${{ secrets.DATABASE_URL }}
 ```
@@ -79,4 +82,5 @@ Works with any PostgreSQL — Supabase, Neon, RDS, Railway, or self-hosted.
 
 ## Learn more
 
-- [PR Worlds Action](https://github.com/Csar1310/action) — installation, configuration, and docs
+- [PR Worlds Action](https://github.com/pr-worlds/action) — installation, configuration, and docs
+- [pr-worlds.com](https://pr-worlds.com) — pricing and quick start
